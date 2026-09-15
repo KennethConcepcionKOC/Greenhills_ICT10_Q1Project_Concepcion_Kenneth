@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+    <title>Skills Test</title>
+
+    <!-- everything is the same i just changed the styling to match the project -->
+    <style>
+        body {
+            background-image: url(https://images.pexels.com/photos/36580122/pexels-photo-36580122.jpeg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 12px 30px;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .box {
+            background-color: white;
+            width: 380px;
+            margin: 60px auto;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">SKU Generator</a>
+        <a href="receipt.html">Receipt Generator</a>
+    </nav>
+
+    <div class="box">
+        <H1 style="color: #222; font-family: Arial;">Crepe Order</H1>
+
+        <form>
+
+            <!-- I dont know if value= actually does anything but im gonna keep it there to be safe -->
+            <div role="crepes" aria-label="crepe choices" style="color: #ed9722;">
+                <label><input type="checkbox" id="HamEggCheeseCrepe" value="165"> Ham, Egg, and Cheese crepe</label><br>
+                <label><input type="checkbox" id="SpinachCheeseCrepe" value="150"> Spinach and Cheese crepe</label><br>
+                <label><input type="checkbox" id="NuttellaCrepe" value="125"> Nutella crepe</label><br>
+                <label><input type="checkbox" id="MatchaMilleCrepe" value="200"> Matcha Mille crepe</label><br>
+
+                <button type="button" py-click="calculate">Create Order</button>
+            </div>
+
+        </form>
+
+        <div id="crepe" style="color: #ed9722; font-family: Arial, Helvetica, sans-serif; font-size: larger;"></div>
+
+        <div id="result" style="display: none; color: #c4170e; font-family: Arial, Helvetica, sans-serif; font-size: larger;">
+            <div id="Subtotal"></div>
+            <div id="VAT"></div>
+            <div id="Total"></div>
+        </div>
+    </div>
+
+    <script type="py" src="receipt.py"></script>
+
+    <footer>
+        <p>Receipt Generator -- 1st QTR</p>
+    </footer>
+
+</body>
+</html>
